@@ -32,15 +32,20 @@
 	
 	<div data-role="content">	
 
-	<ul data-role="listview" data-inset="true" data-filter="true">
-		<li><a href="#">Soccer, 11/2/12</a></li>
-		<li><a href="#">Hockey, 11/3/12</a></li>
-		<li><a href="#">Ultimate, 11/4/12</a></li>
-		<li><a href="#">Volleyball, 11/5/12</a></li>
-		<li><a href="#">Football, 11/6/12</a></li>
-	</ul>
+	<div data-role="fieldcontain">
+		<label for="select-choice-1" class="select" datafilter="true">Sport:</label>	
+		<select name="select-choice-1" id="select-choice-1">
+			<option value="basketball">Basketball</option>
+			<option value="fieldhockey">Field Hockey</option>
+			<option value="football">Football</option>
+			<option value="icehockey">Ice Hockey</option>
+			<option value="soccer">Soccer</option>
+			<option value="streethockey">Street Hockey</option>
+			<option value="ultimate">Ultimate Frisbee</option>	
+		</select>
+	</div>
 
-	<a href="#" data-role="button" data-theme="b" data-icon="arrow-r" data-iconpos="right">View Past Games</a>
+	</ul>
 
 	</div>
 	<div data-role="footer" data-id="samebar" class="nav-glyphish-example" data-position="fixed" data-tap-toggle="false">
