@@ -25,7 +25,7 @@
 	<div data-role="header">
 		<a href="Account.php" data-role="button" data-theme="b" >My Profile</a>
 		<h1>Pickup</h1>
-		<a href="#" data-role="button" data-theme="b" >Sign Out</a>
+		<a href="login.php" data-role="button" data-theme="b" >Sign Out</a>
 
 	</div><!-- /header -->
 	
