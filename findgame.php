@@ -22,26 +22,24 @@
 
 <body>
 
-<div data-role="page" id="filter">
+<div data-role="page" id="broadNameSearch">
 
-	<div data-role="header">
-		<a href="#" data-role="button" data-theme="b" >My Profile</a>
-		<h1>Pickup</h1>
-		<a href="#" data-role="button" data-theme="b" >Sign Out</a>
+	<div data-role="header" data-id="findHeader" data-position="fixed">
+		<h1>Find Game</h1>
 
 	</div><!-- /header -->
 	
 	<div data-role="content">	
 	
-	<ul data-role="listview" data-inset="true" data-filter="true">
-		<li><a href="#">Soccer, 11/4/12</a></li>
-		<li><a href="#">Hockey, 11/4/12</a></li>
-		<li><a href="#">Ultimate, 11/4/12</a></li>
-		<li><a href="#">Volleyball, 11/4/12</a></li>
-		<li><a href="#">Football, 11/4/12</a></li>
+	
+	<ul data-role="listview" data-inset="false" data-filter="true">
+		<li><a href="#soccerSearch">Soccer</a></li>
+		<li><a href="#soccerSearch">Hockey</a></li>
+		<li><a href="#soccerSearch">Ultimate</a></li>
+		<li><a href="#soccerSearch">Volleyball</a></li>
+		<li><a href="#soccerSearch">Football</a></li>
+		<li><a href="#soccerSearch">Others</a></li>
 	</ul>
-
-	<a href="#" data-role="button" data-theme="b" data-icon="arrow-r" data-iconpos="right">View Past Games</a>
 
 	</div>
 	<div data-role="footer" data-id="samebar" class="nav-glyphish-example" data-position="fixed" data-tap-toggle="false">
@@ -49,12 +47,44 @@
 		<ul>
 
 			<li><a href="index.php" id="mygames" data-icon="custom">My Games</a></li>
-			<li><a href="#" id="findgame" class="ui-btn-active" data-icon="custom">Find A Game</a></li>
+			<li><a href="#" id="findgame" class="ui-btn-active ui-state-persist" data-icon="custom">Find Game</a></li>
 			<li><a href="#" id="newgame" data-icon="custom">Create Game</a></li>
-
 		</ul>
 		</div>
 	</div>
 </div>
+
+<div data-role="page" id="soccerSearch">
+	<div data-role="header" data-id="findHeader" data-position="fixed">
+		<a href="#broadNameSearch" data-rel="back">Back</a>
+                <h1>Find Game</h1>
+
+        </div><!-- /header -->
+
+        <div data-role="content">
+
+
+        <ul data-role="listview" data-inset="false" data-filter="true">
+                <li><a href="gameDetail.php">Tressider fields</a></li>
+                <li><a href="gameDetail.php">EV Fields</a></li>
+                <li><a href="gameDetail.php">Manz courtyard</a></li>
+                <li><a href="gameDetail.php">Toyon fields</a></li>
+                <li><a href="gameDetail.php">Coho fields</a></li>
+        </ul>
+
+
+        </div>
+        <div data-role="footer" data-id="samebar" class="nav-glyphish-example" data-position="fixed" data-tap-toggle="false">
+                <div data-role="navbar" class="nav-glyphish-example" data-grid="b">
+                <ul>
+
+                        <li><a href="index.php" id="mygames" data-icon="custom">My Games</a></li>
+                        <li><a href="#broadNameSearch" id="findgame" class="ui-btn-active ui-state-persist" data-icon="custom">Find Game</a></li>
+                        <li><a href="#" id="newgame" data-icon="custom">Create Game</a></li>
+                </ul>
+                </div>
+        </div>
+</div>
+
 </body>
 </html>
