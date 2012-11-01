@@ -23,7 +23,7 @@
 <div data-role="page" id="filter">
 
 	<div data-role="header">
-		<a href="#" data-role="button" data-theme="b" >My Profile</a>
+		<a href="Account.php" data-role="button" data-theme="b" >My Profile</a>
 		<h1>Pickup</h1>
 		<a href="#" data-role="button" data-theme="b" >Sign Out</a>
 
