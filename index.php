@@ -48,9 +48,9 @@
 		<div data-role="navbar" class="nav-glyphish-example" data-grid="b">
 		<ul>
 
-			<li><a href="#" id="mygames" class="ui-btn-active" data-icon="custom">My Games</a></li>
+			<li><a href="index.php" id="mygames" data-icon="custom">My Games</a></li>
 			<li><a href="findgame.php" id="findgame" data-icon="custom">Find A Game</a></li>
-			<li><a href="#" id="newgame" data-icon="custom">Create Game</a></li>
+			<li><a href="#" id="newgame" class="ui-btn-active" data-icon="custom">Create Game</a></li>
 
 		</ul>
 		</div>
