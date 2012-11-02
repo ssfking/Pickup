@@ -23,7 +23,7 @@
 	
 	<body>
 		<p> Welcome to Pick up! Please fill out your personal information </p>
-		<form action="mygames.php" method="post">
+		<form action="index.php" method="post">
 		<label for="username">Username:</label>
 		<input type="text" name="username" id="username">
 		<label for="password">Password:</label>
