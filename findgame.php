@@ -33,12 +33,12 @@
 	
 	
 	<ul data-role="listview" data-inset="false" data-filter="true">
-		<li><a href="soccerSearch">Soccer</a></li>
-		<li><a href="soccerSearch">Hockey</a></li>
-		<li><a href="soccerSearch">Ultimate</a></li>
-		<li><a href="soccerSearch">Volleyball</a></li>
-		<li><a href="soccerSearch">Football</a></li>
-		<li><a href="soccerSearch">Others</a></li>
+		<li><a href="#soccerSearch">Soccer</a></li>
+		<li><a href="#soccerSearch">Hockey</a></li>
+		<li><a href="#soccerSearch">Ultimate</a></li>
+		<li><a href="#soccerSearch">Volleyball</a></li>
+		<li><a href="#soccerSearch">Football</a></li>
+		<li><a href="#soccerSearch">Others</a></li>
 	</ul>
 
 	</div>
@@ -48,7 +48,7 @@
 
 			<li><a href="index.php" id="mygames" data-icon="custom">My Games</a></li>
 			<li><a href="#" id="findgame" class="ui-btn-active ui-state-persist" data-icon="custom">Find Game</a></li>
-			<li><a href="#" id="newgame" data-icon="custom">Create Game</a></li>
+			<li><a href="creategame.php" id="newgame" data-icon="custom">Create Game</a></li>
 		</ul>
 		</div>
 	</div>
@@ -80,7 +80,7 @@
 
                         <li><a href="index.php" id="mygames" data-icon="custom">My Games</a></li>
                         <li><a href="#broadNameSearch" id="findgame" class="ui-btn-active ui-state-persist" data-icon="custom">Find Game</a></li>
-                        <li><a href="#" id="newgame" data-icon="custom">Create Game</a></li>
+                        <li><a href="creategame.php" id="newgame" data-icon="custom">Create Game</a></li>
                 </ul>
                 </div>
         </div>

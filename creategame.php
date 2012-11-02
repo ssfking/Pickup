@@ -92,7 +92,7 @@
 		<ul>
 
 			<li><a href="index.php" id="mygames" data-icon="custom">My Games</a></li>
-			<li><a href="findgame.php" id="findgame" data-icon="custom">Find A Game</a></li>
+			<li><a href="findgame.php" id="findgame" data-icon="custom">Find Game</a></li>
 			<li><a href="#" id="newgame" class="ui-btn-active" data-icon="custom">Create Game</a></li>
 
 		</ul>
