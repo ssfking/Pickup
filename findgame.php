@@ -25,7 +25,9 @@
 <div data-role="page" id="broadNameSearch">
 
 	<div data-role="header" data-id="findHeader" data-position="fixed">
+		<a href="Account.php" data-role="button" data-theme="b" >My Profile</a>
 		<h1>Find Game</h1>
+		<a href="login.php" data-role="button" data-theme="b" >Sign Out</a>
 
 	</div><!-- /header -->
 	
@@ -57,7 +59,8 @@
 <div data-role="page" id="soccerSearch">
 	<div data-role="header" data-id="findHeader" data-position="fixed">
 		<a href="#broadNameSearch" data-rel="back">Back</a>
-                <h1>Find Game</h1>
+              <h1>Find Game</h1>
+		<a href="login.php" data-role="button" data-theme="b" >Sign Out</a>
 
         </div><!-- /header -->
 
