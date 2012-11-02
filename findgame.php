@@ -33,12 +33,12 @@
 	
 	
 	<ul data-role="listview" data-inset="false" data-filter="true">
-		<li><a href="#soccerSearch">Soccer</a></li>
-		<li><a href="#soccerSearch">Hockey</a></li>
-		<li><a href="#soccerSearch">Ultimate</a></li>
-		<li><a href="#soccerSearch">Volleyball</a></li>
-		<li><a href="#soccerSearch">Football</a></li>
-		<li><a href="#soccerSearch">Others</a></li>
+		<li><a href="soccerSearch">Soccer</a></li>
+		<li><a href="soccerSearch">Hockey</a></li>
+		<li><a href="soccerSearch">Ultimate</a></li>
+		<li><a href="soccerSearch">Volleyball</a></li>
+		<li><a href="soccerSearch">Football</a></li>
+		<li><a href="soccerSearch">Others</a></li>
 	</ul>
 
 	</div>

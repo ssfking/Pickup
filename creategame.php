@@ -25,9 +25,9 @@
 <div data-role="page" id="filter">
 
 	<div data-role="header">
-		<a href="#" data-role="button" data-theme="b" >My Profile</a>
+		<a href="index.php" data-role="button" data-theme="b" >Back</a>
 		<h1>Pickup</h1>
-		<a href="#" data-role="button" data-theme="b" >Sign Out</a>
+		<a href="signout.php" data-role="button" data-theme="b" >Sign Out</a>
 	</div><!-- /header -->
 	
 	<div data-role="content">	
