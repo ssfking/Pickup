@@ -45,12 +45,13 @@
 
 	</div>
 	<div data-role="footer" data-id="samebar" class="nav-glyphish-example" data-position="fixed" data-tap-toggle="false">
-		<div data-role="navbar" class="nav-glyphish-example" data-grid="b">
+		<div data-role="navbar" class="nav-glyphish-example">
 		<ul>
 
 			<li><a href="index.php" id="mygames" data-icon="custom">My Games</a></li>
 			<li><a href="#" id="findgame" class="ui-btn-active ui-state-persist" data-icon="custom">Find Game</a></li>
-			<li><a href="creategame.php" id="newgame" data-icon="custom">Create Game</a></li>
+			<li><a href="creategame.php" id="newgame" data-icon="custom">Add Game</a></li>
+			<li><a href="Account.php" id="settings" data-icon="custom">Settings</a></li>
 		</ul>
 		</div>
 	</div>
@@ -78,12 +79,13 @@
 
         </div>
         <div data-role="footer" data-id="samebar" class="nav-glyphish-example" data-position="fixed" data-tap-toggle="false">
-                <div data-role="navbar" class="nav-glyphish-example" data-grid="b">
+                <div data-role="navbar" class="nav-glyphish-example">
                 <ul>
 
                         <li><a href="index.php" id="mygames" data-icon="custom">My Games</a></li>
                         <li><a href="#broadNameSearch" id="findgame" class="ui-btn-active ui-state-persist" data-icon="custom">Find Game</a></li>
-                        <li><a href="creategame.php" id="newgame" data-icon="custom">Create Game</a></li>
+                        <li><a href="creategame.php" id="newgame" data-icon="custom">Add Game</a></li>
+			   <li><a href="Account.php" id="settings" data-icon="custom">Settings</a></li>
                 </ul>
                 </div>
         </div>
