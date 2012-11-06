@@ -23,23 +23,23 @@
 	
 	<body>
 		<p> Welcome to Pick up! Please fill out your personal information </p>
-		<form action="index.php" method="post">
+		<form action="confirm-reg.php" method="post">
 		<label for="username">Username:</label>
 		<input type="text" name="username" id="username">
 		<label for="password">Password:</label>
-		<input type="password" name="username" id="username">
+		<input type="password" name="password" id="username">
 		<label for="foo">Name:</label>
-		<input type="text" name="username" id="foo">
+		<input type="text" name="name" id="foo">
 		<label for="bar">Email:</label>
-		<input type="text" name="password" id="bar">
+		<input type="text" name="email" id="bar">
 		<label for="bar">Dorm:</label>
-		<input type="text" name="password" id="bar">
+		<input type="text" name="dorm" id="bar">
     	<label for="bar">City:</label>
-		<input type="text" name="password" id="bar">
+		<input type="text" name="location" id="bar">
 		<label for="bar">Phone:</label>
-		<input type="text" name="password" id="bar">
+		<input type="text" name="phone" id="bar">
 		<label for="bar">School:</label>
-		<input type="text" name="password" id="bar">
+		<input type="text" name="school" id="bar">
 		<input type="submit" value="Register">
 		</form>
 	</body>
