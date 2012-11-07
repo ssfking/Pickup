@@ -31,11 +31,21 @@
 	
 	<div data-role="content">	
 		<ul>
-			<li> Email: </li>
-			<li> Phone: </li>
-			<li> Dorm: </li>
-			<li> School: </li>
-			<li> City: </li>
+			<?php 
+				include("config.php");
+				$username = "<script> document.write(localStorage.getItem('username'));</script>";
+				
+				$query = "SELECT * FROM Users WHERE Username ='" . $username . "'";
+				echo $query;
+				$result = mysql_query($query);
+				
+				echo "<li>Name:" .$result["Name"]. "</li>";
+				echo "<li>Email:" .$result. "</li>";
+				echo "<li>Phone:" .$result["Phone"]. "</li>";
+				echo "<li>Dorm:" .$result["Dorm"]. "</li>";
+				echo "<li>City:" .$result["City"]. "</li>";
+				echo "<li>School:" .$result["School"]. "</li>";
+			?>
 	</div>
 	<div data-role="footer" data-id="samebar" class="nav-glyphish-example" data-position="fixed" data-tap-toggle="false">
 		<div data-role="navbar" class="nav-glyphish-example" data-grid="b">

@@ -30,8 +30,18 @@
 	</div><!-- /header -->
 	
 	<div data-role="content">	
-	
 	<ul data-role="listview" data-inset="true" data-filter="true">
+	<?php
+		include("config.php");
+		$query = "SELECT * FROM games ORDER BY date";
+		$result = mysql_query($query);
+		while ($row = mysql_fetch_assoc($result)) {
+
+    echo "<li><a href='#'>" .$row["sport"]. "</a></li>";
+
+}
+	?>
+	
 		<li><a href="#">Soccer, 11/2/12</a></li>
 		<li><a href="#">Hockey, 11/3/12</a></li>
 		<li><a href="#">Ultimate, 11/4/12</a></li>
@@ -43,12 +53,13 @@
 
 	</div>
 	<div data-role="footer" data-id="samebar" class="nav-glyphish-example" data-position="fixed" data-tap-toggle="false">
-		<div data-role="navbar" class="nav-glyphish-example" data-grid="b">
+		<div data-role="navbar" class="nav-glyphish-example">
 		<ul>
 
 			<li><a href="index.php" id="mygames" class="ui-btn-active" data-icon="custom">My Games</a></li>
 			<li><a href="findgame.php" id="findgame" data-icon="custom">Find Game</a></li>
-			<li><a href="creategame.php" id="newgame" data-icon="custom">Create Game</a></li>
+			<li><a href="creategame.php" id="newgame" data-icon="custom">Add Game</a></li>
+			<li><a href="Account.php" id="settings" data-icon="custom">Settings</a></li>
 
 		</ul>
 		</div>
