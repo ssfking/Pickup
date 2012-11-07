@@ -30,6 +30,8 @@
 	<div data-role="content">	
 		
 		<?php>
+		echo $_Post[username];
+		if($_Post[username] != NULL){
 		include("config.php");
 		$query = "INSERT INTO Users VALUES('$_POST[username]', '$_POST[password]')";
 		$result = mysql_query($query);
@@ -42,6 +44,7 @@
 		}
 		else {
 			echo "<p>Thank you, <strong>".$_POST["username"]."</strong>. You are now logged in.</p>";
+		}
 		}
 			?>
 	<div id="UserInfo"> 

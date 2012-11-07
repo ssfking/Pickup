@@ -23,9 +23,9 @@
 <div data-role="page" id="filter">
 
 	<div data-role="header">
-		<a href="#" data-role="button" data-theme="b" >My Profile</a>
+		<a href="Account.php" data-role="button" data-theme="b" >My Profile</a>
 		<h1>Pickup</h1>
-		<a href="#" data-role="button" data-theme="b" >Sign Out</a>
+		<a href="login.php" data-role="button" data-theme="b" >Sign Out</a>
 
 	</div><!-- /header -->
 	
@@ -43,12 +43,13 @@
 
 	</div>
 	<div data-role="footer" data-id="samebar" class="nav-glyphish-example" data-position="fixed" data-tap-toggle="false">
-		<div data-role="navbar" class="nav-glyphish-example" data-grid="b">
+		<div data-role="navbar" class="nav-glyphish-example">
 		<ul>
 
 			<li><a href="index.php" id="mygames" class="ui-btn-active" data-icon="custom">My Games</a></li>
 			<li><a href="findgame.php" id="findgame" data-icon="custom">Find Game</a></li>
-			<li><a href="#" id="newgame" data-icon="custom">Create Game</a></li>
+			<li><a href="creategame.php" id="newgame" data-icon="custom">Add Game</a></li>
+			<li><a href="Account.php" id="settings" data-icon="custom">Settings</a></li>
 
 		</ul>
 		</div>

@@ -25,7 +25,9 @@
 <div data-role="page" id="broadNameSearch">
 
 	<div data-role="header" data-id="findHeader" data-position="fixed">
+		<a href="Account.php" data-role="button" data-theme="b" >My Profile</a>
 		<h1>Find Game</h1>
+		<a href="login.php" data-role="button" data-theme="b" >Sign Out</a>
 
 	</div><!-- /header -->
 	
@@ -43,12 +45,13 @@
 
 	</div>
 	<div data-role="footer" data-id="samebar" class="nav-glyphish-example" data-position="fixed" data-tap-toggle="false">
-		<div data-role="navbar" class="nav-glyphish-example" data-grid="b">
+		<div data-role="navbar" class="nav-glyphish-example">
 		<ul>
 
 			<li><a href="index.php" id="mygames" data-icon="custom">My Games</a></li>
 			<li><a href="#" id="findgame" class="ui-btn-active ui-state-persist" data-icon="custom">Find Game</a></li>
-			<li><a href="#" id="newgame" data-icon="custom">Create Game</a></li>
+			<li><a href="creategame.php" id="newgame" data-icon="custom">Add Game</a></li>
+			<li><a href="Account.php" id="settings" data-icon="custom">Settings</a></li>
 		</ul>
 		</div>
 	</div>
@@ -57,7 +60,8 @@
 <div data-role="page" id="soccerSearch">
 	<div data-role="header" data-id="findHeader" data-position="fixed">
 		<a href="#broadNameSearch" data-rel="back">Back</a>
-                <h1>Find Game</h1>
+              <h1>Find Game</h1>
+		<a href="login.php" data-role="button" data-theme="b" >Sign Out</a>
 
         </div><!-- /header -->
 
@@ -75,12 +79,13 @@
 
         </div>
         <div data-role="footer" data-id="samebar" class="nav-glyphish-example" data-position="fixed" data-tap-toggle="false">
-                <div data-role="navbar" class="nav-glyphish-example" data-grid="b">
+                <div data-role="navbar" class="nav-glyphish-example">
                 <ul>
 
                         <li><a href="index.php" id="mygames" data-icon="custom">My Games</a></li>
                         <li><a href="#broadNameSearch" id="findgame" class="ui-btn-active ui-state-persist" data-icon="custom">Find Game</a></li>
-                        <li><a href="#" id="newgame" data-icon="custom">Create Game</a></li>
+                        <li><a href="creategame.php" id="newgame" data-icon="custom">Add Game</a></li>
+			   <li><a href="Account.php" id="settings" data-icon="custom">Settings</a></li>
                 </ul>
                 </div>
         </div>

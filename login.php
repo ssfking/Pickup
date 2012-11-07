@@ -28,7 +28,7 @@
 
 	<div data-role="content">
 	
-	<form action="enter.php" method="post">
+	<form action="index.php" method="post">
 		<label for="foo">Username:</label>
 		<input type="text" name="username" id="foo">
 		<label for="bar">Password:</label>
