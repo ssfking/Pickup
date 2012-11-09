@@ -37,7 +37,7 @@ if (!isset($userId)) {
 <div data-role="page" id="filter">
 
 <div data-role="header">
-<h1>Pickup</h1>
+<h1>Add Game</h1>
 </div><!-- /header -->
 
 <div data-role="content">	

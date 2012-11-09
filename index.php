@@ -67,9 +67,7 @@ if (isset($status) && isset($gameId)){
 
 
 $resultArr1 = array();
-$peopleCountArr1 = array();
 $resultArr2 = array();
-$peopleCountArr2 = array();
 $query = "SELECT * FROM RelationTable WHERE user_id='".$userId."'";
 $result = mysql_query($query);
 while ($row = mysql_fetch_assoc($result)){
@@ -112,7 +110,7 @@ while ($row = mysql_fetch_assoc($result)){
 <div data-role="page" id="filter">
 
 <div data-role="header">
-<h1>Pickup</h1>
+<h1>My Games</h1>
 
 </div><!-- /header -->
 
@@ -257,6 +255,12 @@ while ($row = mysql_fetch_assoc($result)){
 <div style="text-align:center; font-weight:bold; font-size:20px; margin-top:30px"> 
 You are not involved in any games
 </div>
+<?php endif ;?>
+
+<?php if (isset($sport)): ?>
+<script>
+alert("Game Added!");
+</script>
 <?php endif ;?>
 </div>
 <div data-role="footer" data-id="samebar" class="nav-glyphish-example" data-position="fixed" data-tap-toggle="false">
