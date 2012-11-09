@@ -31,20 +31,29 @@
 	
 	<div data-role="content">	
 		<ul>
-			<li> Email: </li>
-			<li> Phone: </li>
-			<li> Dorm: </li>
-			<li> School: </li>
-			<li> City: </li>
+			<?php 
+				include("config.php");
+				$username = "<script> document.write(localStorage.getItem('username'));</script>";
+				
+				$query = "SELECT * FROM Users WHERE Username ='" . $username . "'";
+				echo $query;
+				$result = mysql_query($query);
+				
+				echo "<li>Name:" .$result["Name"]. "</li>";
+				echo "<li>Email:" .$result. "</li>";
+				echo "<li>Phone:" .$result["Phone"]. "</li>";
+				echo "<li>Dorm:" .$result["Dorm"]. "</li>";
+				echo "<li>City:" .$result["City"]. "</li>";
+				echo "<li>School:" .$result["School"]. "</li>";
+			?>
 	</div>
 	<div data-role="footer" data-id="samebar" class="nav-glyphish-example" data-position="fixed" data-tap-toggle="false">
-		<div data-role="navbar" class="nav-glyphish-example">
+		<div data-role="navbar" class="nav-glyphish-example" data-grid="b">
 		<ul>
 
-			<li><a href="index.php" id="mygames" data-icon="custom">My Games</a></li>
+			<li><a href="index.php" id="mygames"  data-icon="custom">My Games</a></li>
 			<li><a href="findgame.php" id="findgame" data-icon="custom">Find Game</a></li>
-			<li><a href="creategame.php" id="newgame" data-icon="custom">Add Game</a></li>
-			<li><a href="Account.php" id="settings" class="ui-btn-active" data-icon="custom">Settings</a></li>
+			<li><a href="creategame.php" id="newgame" data-icon="custom">Create Game</a></li>
 
 		</ul>
 		</div>
