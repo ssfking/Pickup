@@ -1,4 +1,60 @@
-CTYPE html>
+<?php
+session_start();
+
+include("config.php");
+$userId = $_SESSION['userId'];
+if (!isset($userId)) {
+    header("Location: login.php");
+}
+
+$gameId = $_GET["gameId"];
+
+$status = $_POST["status"];
+if (isset($status)){
+    if ($status == "join") {
+        $query = "INSERT INTO RelationTable VALUES ('".$gameId."','".$userId."')";
+        $result = mysql_query($query);
+    }
+    elseif ($status == "leave") {
+       $query = "DELETE FROM RelationTable WHERE game_id='".$gameId."'and user_id='".$userId."'"; 
+       $result = mysql_query($query);
+    }
+    
+    elseif ($status == "start") {
+        $query = "UPDATE games SET status='ongoing' WHERE game_id='".$gameId."'";
+        $result = mysql_query($query);
+    }
+    else if ($status == "close") {
+       $query = "DELETE FROM RelationTable WHERE game_id='".$gameId."'";
+       $result = mysql_query($query);
+       $query = "DELETE FROM games WHERE game_id='".$gameId."'";
+       $result = mysql_query($query); 
+    }
+}
+$query = "SELECT * FROM games WHERE game_id='".$gameId."'";
+$result = mysql_query($query);
+$row = mysql_fetch_assoc($result);
+
+$query = "SELECT * FROM Users WHERE user_id='".$row['owner']."'";
+$result = mysql_query($query);
+$row2 = mysql_fetch_assoc($result);
+
+$query = "SELECT COUNT(*) FROM RelationTable WHERE game_id='".$gameId."'";
+$result = mysql_query($query);
+$row3 = mysql_fetch_row($result);
+$gamePeopleCount = $row3[0];
+//also need to know if user is creator or if user joined the game
+
+$query = "SELECT COUNT(*) FROM RelationTable WHERE game_id='".$gameId."' and user_id='".$userId."'";
+$result = mysql_query($query);
+$row4 = mysql_fetch_row($result);
+$membership = false;
+if ($row4[0] > 0) {
+    $membership = true;
+}
+?>
+<!DOCTYPE html>
+
 <html>
 
 <head>
@@ -33,38 +89,76 @@ CTYPE html>
 
 	
 	<p>
-	Game Type: Soccer
+	Game Type: <?=$row["sport"] ?>
 	</p>
 	
 	<p>
-	Date: 10th Octeber, 2012
+	Date: <?= $row["date"] ?>
 	</p>
 
 	<p>
-	Time: 11:00am - 1pm
+	Start Time: <?=$row["time"]?> 
 	</p>
 	
 	<p>
-	Location: Toyon fields
+	Location: <?=$row["location"]?>
 	</p>
 	
 	<p>
-	Number of people signed up: 6
+	Number of people signed up: <?=$gamePeopleCount?>
 	</p>
 
 	<p>
-	Min/Max Capacity: 5/22
+	Target Capacity: <?=$row["capacity"]?>
 	</p> 
 	
+    <p>
+    Owner Name: <?=$row2["Name"]?>
+    </p>
+
+    <p>
+    Owner Phone #: <?=$row2["Phone"]?>
+    </p>
+    
+    <p>
+    Owner Email: <?=$row2["Email"]?>
+    </p>
+
 	<p>
-	<form action="#" method="post">
-	<input type="hidden" name="status" value="Join" />
-	<input type="submit" value="Join"/>
-	</form>
+    <?php if ($userId == $row["owner"]):?>
+        <?php if ($row["Status"] == "ongoing"): ?>
+	        <form action="index.php" method="get">
+	        <input type="hidden" name="status" value="close" />
+            <input type="hidden" name="game_id" value="<?=$gameId?>" />
+	        <input type="submit" value="Close"/>
+	        </form>
+        <?php else: ?>
+            
+	        <form action="index.php" method="get">
+	        <input type="hidden" name="status" value="start" />
+            <input type="hidden" name="game_id" value="<?=$gameId?>" />
+	        <input type="submit" value="Start"/>
+	        </form>
+        <?php endif ;?>    
+    <?php else: ?>
+        <?php if ($membership == true): ?>
+	        <form action="index.php" method="get">
+	        <input type="hidden" name="status" value="leave" />
+            <input type="hidden" name="game_id" value="<?=$gameId?>" />
+            <input type="submit" value="Leave"/>
+	        </form>
+        <?php else: ?>
+	        <form action="index.php" method="get">
+	        <input type="hidden" name="status" value="join" />
+            <input type="hidden" name="game_id" value="<?=$gameId?>" />
+            <input type="submit" value="Join"/>
+	        </form>
+        <?php endif ;?>       
+    
+    <?php endif ;?> 
 	</p>
 	</div>
 </div>
 </body>
 </html>
-
 
