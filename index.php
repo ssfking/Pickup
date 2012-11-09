@@ -30,7 +30,7 @@ $time = $_POST["time"];
 $location = $_POST["location"];
 
 if (isset($sport) || isset($date) || isset($location) || isset($type) || isset($time)){
-    $query = "select COUNT(*) FROM games";
+    $query = "select MAX(game_id) FROM games";
     $result = mysql_query($query);
     $row = mysql_fetch_row($result);
     $count = $row[0] + 1;
