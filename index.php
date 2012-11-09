@@ -67,7 +67,9 @@ if (isset($status) && isset($gameId)){
 
 
 $resultArr1 = array();
+$peopleCountArr1 = array();
 $resultArr2 = array();
+$peopleCountArr2 = array();
 $query = "SELECT * FROM RelationTable WHERE user_id='".$userId."'";
 $result = mysql_query($query);
 while ($row = mysql_fetch_assoc($result)){
@@ -160,7 +162,14 @@ while ($row = mysql_fetch_assoc($result)){
                 <p>
                 <p>
                     <strong>
-                        5 joined
+
+                <?php
+    $queryCount = "SELECT COUNT(*) FROM RelationTable WHERE game_id='".$value["game_id"]."'";
+    $queryResult = mysql_query($queryCount);
+    $countResult = mysql_fetch_row($queryResult);
+    $countResult = $countResult[0];
+    echo($countResult." joined");
+                ?>
                     </strong>
                 </p>
             </div>
@@ -190,7 +199,7 @@ while ($row = mysql_fetch_assoc($result)){
     
     <?php foreach ($resultArr2 as $value): ?>
     <li>
-        <a href="#">
+        <a href="gameDetail.php?gameId=<?= $value['game_id']?>">
             <div style="width:50%; float:left;margin-right:30px">
                 <p>
                     <h3>
@@ -223,7 +232,14 @@ while ($row = mysql_fetch_assoc($result)){
                 <p>
                 <p>
                     <strong>
-                        5 joined
+                    
+                <?php
+    $queryCount = "SELECT COUNT(*) FROM RelationTable WHERE game_id='".$value["game_id"]."'";
+    $countResult = mysql_query($queryCount);
+    $countResult = mysql_fetch_row($countResult);
+    $countResult = $countResult[0];
+    echo($countResult." joined");
+                ?>
                     </strong>
                 </p>
             </div>

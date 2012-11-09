@@ -128,7 +128,13 @@ while ($row = mysql_fetch_assoc($result)){
             <p>
             <p>
                 <strong>
-                    5 joined
+                <?php
+    $queryCount = "SELECT COUNT(*) FROM RelationTable WHERE game_id='".$value["game_id"]."'";
+    $countResult = mysql_query($queryCount);
+    $countResult = mysql_fetch_row($countResult);
+    $countResult = $countResult[0];
+    echo($countResult." joined");
+                ?>
                 </strong>
             </p>
         </div>
@@ -172,7 +178,7 @@ while ($row = mysql_fetch_assoc($result)){
 		<ul>
 
 			<li><a href="index.php" id="mygames" data-icon="custom">My Games</a></li>
-			<li><a href="#" id="findgame" class="ui-btn-active ui-state-persist" data-icon="custom">Find Game</a></li>
+			<li><a href="findgame.php" id="findgame" class="ui-btn-active" data-icon="custom">Find Game</a></li>
 			<li><a href="creategame.php" id="newgame" data-icon="custom">Add Game</a></li>
 			<!--<li><a href="Account.php" id="settings" data-icon="custom">Settings</a></li>
 		    -->
