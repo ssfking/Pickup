@@ -40,18 +40,29 @@ if (!isset($userId)) {
 <h1>Add Game</h1>
 </div><!-- /header -->
 
-<div data-role="content">	
-<form action="index.php" method="post">
-<label for="sport">Sport</label>
-<input type="text" name="sport"> </input>
-<label for="date">Date</label>
-<input type="text" name="date"> </input>
-<label for="date">Time</label>
-<input type="text" name="time"> </input>
-<label for="date">Location</label>
-<input type="text" name="location"> </input>
-<input type="submit" value="Create Game!"></input>
-</form>
+<div data-role="content">
+    <p>
+        Please fill out the following information to add a new game.
+    </p>	
+    <form action="index.php" method="post">
+        <div data-role="fieldcontain">
+        <label for="sport">Sport:</label>
+        <input type="text" name="sport" id="sport"/>
+        </div>
+        <div data-role="fieldcontain">
+        <label for="date">Date:</label>
+        <input type="text" name="date" id="date"/>
+        </div>
+        <div data-role="fieldcontain">
+        <label for="time">Time:</label>
+        <input type="text" name="time" id="time" />
+        </div>
+        <div data-role="fieldcontain">
+        <label for="location">Location:</label>
+        <input type="text" name="location" id="location"/>
+        </div>
+        <button type="submit" data-theme="b" value="Create Game!">Submit</button>
+    </form>
 <div data-role="footer" data-id="samebar" class="nav-glyphish-example" data-position="fixed" data-tap-toggle="false">
 <div data-role="navbar" class="nav-glyphish-example">
 <ul>

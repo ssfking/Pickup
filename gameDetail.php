@@ -6,7 +6,7 @@ $userId = $_SESSION['userId'];
 if (!isset($userId)) {
     header("Location: login.php");
 }
-
+$prev=$_GET["prev"];
 $gameId = $_GET["gameId"];
 
 $status = $_POST["status"];
@@ -58,6 +58,7 @@ if ($row4[0] > 0) {
 <html>
 
 <head>
+<script src="//cdn.optimizely.com/js/141292108.js"></script> 
         <title>Pickup - Find a Game</title> 
         <meta charset="utf-8">
         <meta name="apple-mobile-web-app-capable" content="yes">
@@ -68,6 +69,7 @@ if ($row4[0] > 0) {
         <link rel="stylesheet" href="style.css" />
         <link rel="apple-touch-icon" href="appicon.png" />
         <link rel="apple-touch-startup-image" href="startup.png">
+        <link rel="stylesheet" href="jquery-mobile-red-buttons.css"/>
 
         <script src="jquery-1.8.2.min.js"></script>
         <script src="jquery.mobile-1.2.0.js"></script>
@@ -80,8 +82,17 @@ if ($row4[0] > 0) {
 
 <div data-role="page" id="gameDetail">
 	<div data-role="header" data-id="findHeader" data-position="fixed">
-                <a href="findGame.php" data-rel="back">Back</a>
-                <h1>Game</h1>
+                
+    <?php if ($prev == "index"): ?>
+    
+        <a href="index.php">Back</a>
+
+    <?php elseif ($prev=="findgame"): ?>
+        <a href="findgame.php">Back</a>
+    <?php endif ?>
+
+        <h1>Game Detail</h1>
+
 
         </div><!-- /header -->
 
@@ -105,12 +116,21 @@ if ($row4[0] > 0) {
 	</p>
 	
 	<p>
-	Number of people signed up: <?=$gamePeopleCount?>
+	Current Size: <?=$gamePeopleCount?>
 	</p>
 
 	<p>
-	Target Capacity: <?=$row["capacity"]?>
+	Target Size: <?=$row["capacity"]?>
 	</p> 
+
+    <p>
+    Status:
+    <?php if ($row["Status"] == "ongoing"): ?>
+        Game on
+    <?php else: ?>
+        Pending
+    <?php endif; ?>
+    </p>
 	
     <p>
     Owner Name: <?=$row2["Name"]?>
@@ -125,33 +145,50 @@ if ($row4[0] > 0) {
     </p>
 
 	<p>
+    
     <?php if ($userId == $row["owner"]):?>
         <?php if ($row["Status"] == "ongoing"): ?>
 	        <form action="index.php" method="get">
 	        <input type="hidden" name="status" value="close" />
             <input type="hidden" name="game_id" value="<?=$gameId?>" />
-	        <input type="submit" value="Close"/>
+	        <button  data-theme="r" type="submit" value="Delete">Delete Game
+            </button>
 	        </form>
         <?php else: ?>
             
 	        <form action="index.php" method="get">
 	        <input type="hidden" name="status" value="start" />
             <input type="hidden" name="game_id" value="<?=$gameId?>" />
-	        <input type="submit" value="Start"/>
+	        <button data-theme="b" type="submit" value="Start"/>Start Game
+            </button>
 	        </form>
+            
+           <br /> 
+
+            <form action="index.php" method="get">
+            <input type="hidden" name="status" value="close" />
+            <input type="hidden" name="game_id" value="<?=$gameId?>" />
+            <button  data-theme="r" type="submit" value="Delete">Delete Game
+            </button>
+            </form>
+
+
+
         <?php endif ;?>    
     <?php else: ?>
         <?php if ($membership == true): ?>
 	        <form action="index.php" method="get">
 	        <input type="hidden" name="status" value="leave" />
             <input type="hidden" name="game_id" value="<?=$gameId?>" />
-            <input type="submit" value="Leave"/>
-	        </form>
+            <button data-theme="r" type="submit" value="Leave"/> Leave Game
+	        </button>
+            </form>
         <?php else: ?>
 	        <form action="index.php" method="get">
 	        <input type="hidden" name="status" value="join" />
             <input type="hidden" name="game_id" value="<?=$gameId?>" />
-            <input type="submit" value="Join"/>
+            <button data-theme="b" type="submit" value="Join"/> Join Game
+            </button>
 	        </form>
         <?php endif ;?>       
     

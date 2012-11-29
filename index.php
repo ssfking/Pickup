@@ -11,7 +11,7 @@ if (isset($username) || isset($password)) {
     $result = mysql_query($query);
     $row = mysql_fetch_assoc($result);
     if ($result == NULL) {
-        header("Location: login.php/?retry=true");     
+        header("Location: login.php?error=true");     
     } else {
         $_SESSION['userId'] =  $row["user_id"];
     }
@@ -19,7 +19,7 @@ if (isset($username) || isset($password)) {
 
 $userId = $_SESSION['userId'];
 if (!isset($userId)) {
-    header("Location: login.php");
+    header("Location: login.php?yo=wtf");
 }
 
 
@@ -89,6 +89,7 @@ while ($row = mysql_fetch_assoc($result)){
 <html>
 
 <head>
+<script src="//cdn.optimizely.com/js/141292108.js"></script> 
 <title>Pickup - My Games</title> 
 <meta charset="utf-8">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -126,9 +127,9 @@ while ($row = mysql_fetch_assoc($result)){
     <ul data-role="listview" data-inset="true" data-filter="false">
     
     <?php foreach ($resultArr1 as $value): ?>
-    <li>
-        <a href="gameDetail.php?gameId=<?= $value['game_id']?>">
-            <div style="width:50%; float:left;margin-right:30px">
+    <li data-icon="false">
+        <a href="gameDetail.php?prev=index&gameId=<?= $value['game_id']?>">
+            <div style="width:100px; float:left;margin-right:30px">
                 <p>
                     <h3>
                         <?= $value["sport"] ?>
@@ -149,7 +150,7 @@ while ($row = mysql_fetch_assoc($result)){
                 <p>
                     <? if ($value['Status'] == "ongoing"): ?>
                     <h3 style="color:green">
-                        Ongoing
+                        Game on
                     </h3>
                     <? else: ?>
                            
@@ -171,10 +172,16 @@ while ($row = mysql_fetch_assoc($result)){
                     </strong>
                 </p>
             </div>
+<!--
+        <div  style="position:absolute;top:12px;left:190px;" data-role="controlgroup" data-type="vertical" data-mini="true" >
+               <a href="#" data-role="button" data-mini="true" data-icon="plus" data-iconpos="notext"></a>
+               <a href="#" data-role="button" data-mini="true" data-icon="minus" data-iconpos="notext"></a>
+        </div>
         </a>
-        <? if ($value['Status'] == 'ongoing'): ?>
-            <a data-icon="delete" href="index.php?game_id=<?=$value["game_id"]?>&status=close">Close Game</a>
-        <? else: ?>
+-->
+        </a>
+        
+        <? if ($value['Status'] != 'ongoing'): ?>
             <a data-icon="check" href="index.php?game_id=<?=$value["game_id"]?>&status=start">Start Game</a>
         <? endif; ?>
     </li>
@@ -196,9 +203,9 @@ while ($row = mysql_fetch_assoc($result)){
     
     
     <?php foreach ($resultArr2 as $value): ?>
-    <li>
-        <a href="gameDetail.php?gameId=<?= $value['game_id']?>">
-            <div style="width:50%; float:left;margin-right:30px">
+    <li data-icon="false">
+        <a href="gameDetail.php?prev=index&gameId=<?= $value['game_id']?>">
+            <div style="width:100px; float:left;margin-right:30px">
                 <p>
                     <h3>
                         <?= $value["sport"] ?>
@@ -219,7 +226,7 @@ while ($row = mysql_fetch_assoc($result)){
                 <p>
                     <? if ($value['Status'] == "ongoing"): ?>
                     <h3 style="color:green">
-                        Ongoing
+                        Game on!
                     </h3>
                     <? else: ?>
                            
@@ -242,7 +249,8 @@ while ($row = mysql_fetch_assoc($result)){
                 </p>
             </div>
         </a>
-            <a data-icon="delete" href="index.php?game_id=<?=$value["game_id"]?>&status=leave">Leave Game</a>
+            <!--<a data-icon="delete" href="index.php?game_id=<?=$value["game_id"]?>&status=leave">Leave Game</a>
+        -->
     </li>
     <?php endforeach; ?>
     

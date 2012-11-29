@@ -60,6 +60,7 @@ while ($row = mysql_fetch_assoc($result)){
 <html>
 
 <head>
+<script src="//cdn.optimizely.com/js/141292108.js"></script> 
 	<title>Pickup - Find a Game</title> 
 	<meta charset="utf-8">
 	<meta name="apple-mobile-web-app-capable" content="yes">
@@ -94,9 +95,9 @@ while ($row = mysql_fetch_assoc($result)){
 
 
 <?php foreach ($resultArr as $value): ?>
-<li>
-    <a href="gameDetail.php?gameId=<?=$value["game_id"]?>">
-        <div style="width:50%; float:left;margin-right:30px">
+<li data-icon="false">
+    <a href="gameDetail.php?prev=findgame&gameId=<?=$value["game_id"]?>">
+        <div style="width:100px; float:left;margin-right:30px">
             <p>
                 <h3>
                     <?= $value["sport"] ?>
@@ -117,7 +118,7 @@ while ($row = mysql_fetch_assoc($result)){
             <p>
                 <? if ($value['Status'] == "ongoing"): ?>
                 <h3 style="color:green">
-                    Ongoing
+                    Game on
                 </h3>
                 <? else: ?>
                        
@@ -140,9 +141,7 @@ while ($row = mysql_fetch_assoc($result)){
         </div>
     </a>
     <?php if ($userId == $value["owner"]): ?>
-        <? if ($value['Status'] == 'ongoing'): ?>
-            <a data-icon="delete" href="index.php?status=close&game_id=<?=$value['game_id']?>">Close Game</a>
-        <? else: ?>
+        <? if ($value['Status'] != 'ongoing'): ?>
             <a data-icon="check" href="index.php?status=start&game_id=<?=$value['game_id']?>">Start Game</a>
         <? endif; ?>
     <? else: ?>
@@ -159,10 +158,8 @@ while ($row = mysql_fetch_assoc($result)){
 
         ?>
 
-        <? if ($membership == true) :?>
-            <a data-icon="delete" href="index.php?status=leave&game_id=<?=$value['game_id']?>">Leave Game</a>
-        <? else: ?>
-            <a data-icon="check" href="index.php?status=join&game_id=<?=$value['game_id']?>">Join Game</a>
+        <? if ($membership != true) :?>
+            <a data-icon="plus" href="index.php?status=join&game_id=<?=$value['game_id']?>">Join Game</a>
         <? endif ;?>
     <? endif; ?>
 </li>
