@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 include("config.php");
 $username = $_POST["username"];
 $password = $_POST["password"];
@@ -19,7 +18,7 @@ if (isset($username) || isset($password)) {
 
 $userId = $_SESSION['userId'];
 if (!isset($userId)) {
-    header("Location: login.php?yo=wtf");
+    header("Location: login.php");
 }
 
 
@@ -84,12 +83,10 @@ while ($row = mysql_fetch_assoc($result)){
 
 ?>
 
-
 <!DOCTYPE html> 
 <html>
 
 <head>
-<script src="//cdn.optimizely.com/js/141292108.js"></script> 
 <title>Pickup - My Games</title> 
 <meta charset="utf-8">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -106,13 +103,16 @@ while ($row = mysql_fetch_assoc($result)){
 
 </head>
 
+
+
 <body>
 
 <div data-role="page" id="filter">
 
 <div data-role="header">
 <h1>My Games</h1>
-
+<a href="logout.php" data-theme="b" class="ui-btn-right">Logout
+</a>
 </div><!-- /header -->
 
 <div data-role="content">	

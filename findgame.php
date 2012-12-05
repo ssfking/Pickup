@@ -60,7 +60,6 @@ while ($row = mysql_fetch_assoc($result)){
 <html>
 
 <head>
-<script src="//cdn.optimizely.com/js/141292108.js"></script> 
 	<title>Pickup - Find a Game</title> 
 	<meta charset="utf-8">
 	<meta name="apple-mobile-web-app-capable" content="yes">

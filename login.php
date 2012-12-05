@@ -1,13 +1,8 @@
 <?php
 session_start();
-
 include("config.php");
-
-
-
 $username = $_POST["username"];
 $password = $_POST["password"];
-
 $error1 = $_GET["error"];
 
 $error="";
@@ -27,11 +22,11 @@ if (isset($username) || isset($password)) {
 }
 
 ?>
+
 <!DOCTYPE html>
 <html>
 
 <head>
-<script src="//cdn.optimizely.com/js/141292108.js"></script> 
 <title>Pickup</title> 
 <meta charset="utf-8">
 <meta name="apple-mobile-web-app-capable" content="yes">
