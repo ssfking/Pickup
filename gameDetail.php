@@ -150,7 +150,7 @@ if ($row4[0] > 0) {
 	        <form action="index.php" method="get">
 	        <input type="hidden" name="status" value="close" />
             <input type="hidden" name="game_id" value="<?=$gameId?>" />
-	        <button  data-theme="r" type="submit" value="Delete">Delete Game
+	        <button  data-theme="r" type="submit" value="Delete" onClick ="return confirm ('Are you sure you want to delete game?')">Delete Game
             </button>
 	        </form>
         <?php else: ?>
@@ -167,7 +167,7 @@ if ($row4[0] > 0) {
             <form action="index.php" method="get">
             <input type="hidden" name="status" value="close" />
             <input type="hidden" name="game_id" value="<?=$gameId?>" />
-            <button  data-theme="r" type="submit" value="Delete">Delete Game
+            <button  data-theme="r" type="submit" value="Delete" onClick ="return confirm ('Are you sure you want to delete game?')">Delete Game
             </button>
             </form>
 
@@ -177,9 +177,9 @@ if ($row4[0] > 0) {
     <?php else: ?>
         <?php if ($membership == true): ?>
 	        <form action="index.php" method="get">
-	        <input type="hidden" name="status" value="leave" />
+	        <input type="hidden" name="status" value="leave"/>
             <input type="hidden" name="game_id" value="<?=$gameId?>" />
-            <button data-theme="r" type="submit" value="Leave"/> Leave Game
+            <button data-theme="r" type="submit" value="Leave" onClick ="return confirm ('Are you sure you want to leave game?')" /> Leave Game
 	        </button>
             </form>
         <?php else: ?>
