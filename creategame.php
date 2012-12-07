@@ -61,6 +61,10 @@ if (!isset($userId)) {
         <label for="location">Location:</label>
         <input type="text" name="location" id="location"/>
         </div>
+        <div data-role="fieldcontain">
+        <label for="location">Capacity:</label>
+        <input type="text" name="capacity" id="capacity"/>
+        </div>
         <button type="submit" data-theme="b" value="Create Game!">Submit</button>
     </form>
 <div data-role="footer" data-id="samebar" class="nav-glyphish-example" data-position="fixed" data-tap-toggle="false">

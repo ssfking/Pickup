@@ -27,13 +27,14 @@ $date = $_POST["date"];
 $type = $_POST["type"];
 $time = $_POST["time"];
 $location = $_POST["location"];
+$capacity = $_POST["capacity"];
 
 if (isset($sport) || isset($date) || isset($location) || isset($type) || isset($time)){
     $query = "select MAX(game_id) FROM games";
     $result = mysql_query($query);
     $row = mysql_fetch_row($result);
     $count = $row[0] + 1;
-    $query = "INSERT INTO games VALUES ('".$count."','".$sport."','".$location."','".$date."','".$time."', 'pending','".$userId."', '10')";
+    $query = "INSERT INTO games VALUES ('".$count."','".$sport."','".$location."','".$date."','".$time."', 'pending','".$userId."', '".$capacity."')";
     $result = mysql_query($query);
     $query = "INSERT INTO RelationTable VALUES ('".$count."','".$userId."')";
     $result = mysql_query($query);
